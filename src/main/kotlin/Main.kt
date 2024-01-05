@@ -1,7 +1,15 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+import org.bukkit.plugin.java.JavaPlugin
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+class Main: JavaPlugin() {
+    companion object {
+        lateinit var instance: Main
+            private set
+    }
+    override fun onEnable() {
+        logger.info("Skyblock is enabled!")
+    }
+
+    override fun onDisable() {
+        logger.info("Skyblock is disabled!")
+    }
 }
